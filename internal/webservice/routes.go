@@ -128,8 +128,8 @@ func (ws *WebService) init(ctx context.Context) {
 		service.GET(routeNodeUtilization).
 			To(ws.getNodesUtils).
 			Produces(restful.MIME_JSON).
-			Writes([]dao.PartitionNodesUtilDAOInfo{}).
-			Returns(200, "OK", []dao.PartitionNodesUtilDAOInfo{}).
+			Writes([]model.NodesUtil{}).
+			Returns(200, "OK", []model.NodesUtil{}).
 			Returns(500, "Internal Server Error", ProblemDetails{}).
 			Doc("Get node utilization"),
 	)
